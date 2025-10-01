@@ -1,13 +1,300 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My GitHub Repo Webpage</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Repo Webpage</title>
+    <!-- Load Tailwind CSS from CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply a modern, clean font and basic smoothing globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <!-- Configure Tailwind for a nice primary color -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5', /* Indigo 600 */
+                        'primary-dark': '#4338ca', /* Indigo 700 */
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <h1>Hello, Class!</h1>
-  <p>This is a basic HTML page for the repo.</p>
-  <p> Try making a change to it! Meow</p>
-  <h1> yup</h1>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <!-- Header & Responsive Navigation -->
+    <header class="sticky top-0 bg-white shadow-md z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo: Updated to Pygyat -->
+                <a href="#" class="text-2xl font-bold text-primary">Pygyat</a>
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-primary transition duration-150">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary transition duration-150">Pricing</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary transition duration-150">About</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary transition duration-150">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-100">
+                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Features</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Pricing</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section (Now featuring your H1 and link) -->
+        <section class="py-20 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <!-- User's H1 Content -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8">
+                    shutup
+                </h1>
+                
+                <!-- User's link, styled as a prominent call-to-action button -->
+                <a href="https://www.pygyat.org/" class="inline-flex items-center justify-center px-8 py-4 text-xl font-bold rounded-full shadow-lg text-primary bg-white hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    meow
+                </a>
+                
+                <!-- Descriptive paragraph updated for Pygyat -->
+                <p class="text-lg opacity-80 mt-8 max-w-xl mx-auto">
+                    This is the dedicated GitHub repository page for Pygyat.org. Check out the link above for the main project site.
+                </p>
+            </div>
+        </section>
+
+        <!-- Feature Grid Section -->
+        <section id="features" class="py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-base text-primary-dark font-semibold tracking-wide uppercase">Core Advantages</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Everything You Need, Nothing You Don't
+                    </p>
+                </div>
+
+                <!-- Three-column responsive grid (4 items for better wrap on mobile/tablet) -->
+                <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    
+                    <!-- Feature Card 1: Pixel-Perfect Design -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02] duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white">
+                            <!-- Icon: Checkmark Circle -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">Pixel-Perfect Design</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Achieve beautiful aesthetics easily using modern utility classes and a responsive grid system.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2: Single File Simplicity -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02] duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white">
+                            <!-- Icon: Code -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">Single File Simplicity</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Everything is contained in one file, making it easy to share, deploy, and modify without complex build steps.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 3: High Performance -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02] duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white">
+                            <!-- Icon: Zap -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">High Performance</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            The lean structure and CDN loading minimize overhead, providing lightning-fast page loading times.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 4: Mobile-First Responsiveness -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl transition transform hover:scale-[1.02] duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white">
+                            <!-- Icon: Mobile -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">Mobile-First Ready</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Designed from the ground up to look great and function perfectly on any device size, desktop to mobile.
+                        </p>
+                    </div>
+                </div> <!-- End of feature grid -->
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section id="pricing" class="bg-white py-16 sm:py-24 border-t border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl mb-4">
+                    Transparent Pricing
+                </h2>
+                <p class="text-xl text-gray-500 mb-12">
+                    Choose the plan that best fits your needs. Everything starts with a free, customizable template.
+                </p>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-2xl border-2 border-primary-dark mx-auto max-w-sm">
+                    <h3 class="text-2xl font-bold text-primary mb-2">Starter Template</h3>
+                    <p class="text-5xl font-extrabold text-gray-900 mb-6">$0<span class="text-base font-medium text-gray-500">/always</span></p>
+                    <p class="text-lg text-gray-600 mb-6">Access to the full HTML/Tailwind template structure and all resources.</p>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-primary hover:bg-primary-dark transition duration-300 w-full">
+                        Start Building Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center">
+                    <h2 class="text-base text-primary-dark font-semibold tracking-wide uppercase">Our Mission</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        A Commitment to Open Source Design
+                    </p>
+                </div>
+                <div class="mt-10 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+                    <div class="order-2 lg:order-1">
+                        <!-- Content updated for Pygyat -->
+                        <p class="mt-4 text-lg text-gray-600">
+                            Pygyat is a commitment to providing high-quality, open-source resources. This repository serves as the foundation for the main Pygyat website, demonstrating clean, modern web design and simple deployment using a single HTML file and Tailwind CSS via CDN.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-600">
+                            By leveraging the power of a single HTML file and the versatility of Tailwind CSS via CDN, we provide a perfect sandbox for rapid prototyping, learning, and launching small to medium-sized projects instantly.
+                        </p>
+                    </div>
+                    <!-- Mock Image Placeholder for About Section -->
+                    <div class="mt-8 lg:mt-0 order-1 lg:order-2">
+                        <img class="w-full rounded-xl shadow-2xl transition duration-500 hover:shadow-primary-dark/30" src="https://placehold.co/600x400/4f46e5/ffffff?text=Pygyat+Codebase" alt="Placeholder image illustrating clean code design principles.">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-gray-100 py-16 sm:py-24 border-t border-gray-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl mb-4">
+                        Get In Touch
+                    </h2>
+                    <p class="text-xl text-gray-500 mb-8">
+                        Have a question or want to discuss your project? We're ready to help you launch.
+                    </p>
+                </div>
+                
+                <!-- Simple Contact Form (Action attribute placeholder) -->
+                <form action="#" method="POST" class="mt-12 space-y-6 bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-gray-700">Full Name</label>
+                        <input type="text" name="name" id="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary transition duration-150" placeholder="Jane Doe">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-700">Email Address</label>
+                        <input type="email" name="email" id="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary transition duration-150" placeholder="jane@example.com">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary transition duration-150" placeholder="I'd like to discuss..."></textarea>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit" class="w-full inline-flex justify-center py-3 px-6 border border-transparent rounded-full shadow-lg text-base font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300 transform hover:scale-[1.01]">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-auto">
+        <div class="max-w-7xl mx-auto py-8 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                <div class="px-5 py-2">
+                    <a href="#features" class="text-base text-gray-300 hover:text-white transition duration-150">Features</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#pricing" class="text-base text-gray-300 hover:text-white transition duration-150">Pricing</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#about" class="text-base text-gray-300 hover:text-white transition duration-150">About</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#contact" class="text-base text-gray-300 hover:text-white transition duration-150">Contact</a>
+                </div>
+            </nav>
+            <p class="mt-8 text-center text-base text-gray-400">
+                &copy; 2024 Pygyat. All rights reserved. (Powered by the ProjectBase Template)
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        // Ensures the script runs after the entire HTML document is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            // Toggle logic for the menu button
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true' || false;
+                button.setAttribute('aria-expanded', !isExpanded);
+                
+                // Toggle visibility of the mobile menu
+                menu.classList.toggle('hidden');
+                
+                // Toggle menu (three bars) and close (X) icons
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Auto-close menu when a navigation link inside it is clicked
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Only close if the menu is currently visible
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                        button.setAttribute('aria-expanded', 'false');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
