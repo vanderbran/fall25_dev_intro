@@ -23,3 +23,7 @@ This is an example of a README file - you're used to reading my assignment pages
 ![Screenshot of the summary and description tab in Github Desktop](img/commit.png)
 
 5. Just like comments in code, ***please*** write good commit messages. I saw a capstone group who's commits were "fixed" and "update".
+
+6. Finally, push the changes! If you've attached the repository to your Github account, you'll see it added onto your profile! 
+
+- Note: Github and Git are two different things. Git is the software used for version control, while Github is software as a service (SaaS). Depending on how you use Github (deployment/hosting), it may be closer to infrastructure as a service (SaaS), or Platform as a service (PaaS). 
