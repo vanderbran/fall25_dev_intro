@@ -1,0 +1,20 @@
+body {
+    background-color: #f4f4f9;
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 40px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    color: #0563bb;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+  }
+  
+  p {
+    font-size: 1.1em;
+    margin-top: 16px;
+  }
+  
